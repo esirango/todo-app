@@ -1,0 +1,213 @@
+:root {
+  --color-primary: #f9d72f;
+  --background-color: #e6e6e6;
+  --task-color: #f7f7f7;
+  --success-color: #36d39a;
+  --warning-color: #fbbe23;
+  --color-error: #f87171;
+  --input-color: gray;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  box-shadow: 12px 20px 8px #a4acb01a, -2px -2px 8px #a4acb021;
+  border-radius: 8px;
+  width: 70%;
+  height: max-content;
+  transition: all ease-in 0.3s;
+  padding: 10px 20px;
+  margin: 40px 0 10px 0;
+}
+
+.container h1 {
+  text-align: center;
+  font-size: 1.7rem;
+  margin: 15px 0;
+}
+.container input {
+  border: var(--color-primary) 2px solid;
+  border-radius: 5px;
+  width: 420px;
+  height: 40px;
+  padding: 15px;
+  color: var(--input-color);
+  outline: none;
+}
+
+.filter-todos:hover,
+#add-button:hover,
+#edit-button:hover,
+.table table tbody tr td button:first-child:hover {
+  background-color: #f5d01868;
+}
+#add-button,
+#edit-button {
+  border: none;
+  border-radius: 5px;
+  background-color: var(--color-primary);
+  padding: 13px 15px;
+}
+#edit-button {
+  display: none;
+}
+.filter-todos {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: var(--color-primary);
+}
+.input-section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.todos-operator {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0 5px 0;
+}
+
+#delete-all {
+  background-color: #ff4e4e;
+  border: none;
+  padding: 0 15px;
+  border-radius: 5px;
+}
+
+#delete-all:hover,
+.table table tbody tr td button:last-child:hover {
+  background-color: #f87171;
+}
+
+.container input:nth-child(2) {
+  margin: 0 5px;
+}
+
+.table {
+  width: 70%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease-in 0.3s;
+}
+
+.table table thead tr th {
+  background-color: var(--background-color);
+  padding: 10px 95px;
+}
+.table table thead tr th:first-child {
+  border-top-left-radius: 5px;
+}
+
+.table table thead tr th:last-child {
+  border-top-right-radius: 5px;
+}
+
+.table table tbody tr td {
+  background-color: var(--task-color);
+  padding: 10px 5px;
+  color: #333333;
+}
+.table table tbody tr td button {
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.table table tbody tr td button:first-child {
+  background-color: var(--color-primary);
+}
+.table table tbody tr td button:nth-child(2) {
+  background-color: var(--success-color);
+}
+.table table tbody tr td button:last-child {
+  background-color: #ff4e4e;
+}
+
+.table table tbody tr td button:nth-child(2):hover {
+  background-color: #5ce3b2;
+}
+.alert {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+
+.error {
+  background-color: var(--color-error);
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  width: 70%;
+}
+
+.success {
+  background-color: var(--success-color);
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  width: 70%;
+}
+
+button {
+  cursor: pointer;
+  transition: all ease-in 0.2s;
+}
+
+@media (max-width: 1200px) {
+  .table table thead tr th {
+    padding: 10px 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+  .container input {
+    width: 250px;
+  }
+  .todos-operator button {
+    padding: 10px 7px;
+  }
+  .table table thead tr th {
+    padding: 10px 50px;
+  }
+  .table table thead tr th:last-child {
+    padding: 10px 70px;
+  }
+}
+
+@media (max-width: 650px) {
+  .table table thead tr th {
+    padding: 10px 30px;
+  }
+  .table {
+    font-size: 0.8rem;
+  }
+  .error,
+  .success {
+    width: 90%;
+  }
+}
